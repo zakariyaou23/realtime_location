@@ -19,7 +19,7 @@
 
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
     <script>
-        const socket = io();
+        const socket = io('http://localhost:4001', { transports: ['websocket', 'polling', 'flashsocket'] });
 
         socket.on('connect', () => {
             console.log('Connected to server');
