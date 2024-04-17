@@ -1,6 +1,7 @@
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
+const { join } = require('node:path');
 
 const PORT = process.env.PORT || 4001;
 
@@ -22,5 +23,7 @@ io.on('connection', (socket) => {
     console.log('Client disconnected');
   });
 });
-
+app.get('/', (req, res) => {
+    res.sendFile(join(__dirname, 'index.html'));
+});
 server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
