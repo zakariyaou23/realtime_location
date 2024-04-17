@@ -24,7 +24,6 @@ io.on('connection', (socket) => {
   });
 });
 app.get('/', (req, res) => {
-    console.log("Initial route called");
-    res.sendFile(join(__dirname, 'index.html'));
+    res.send("API is running..");
 });
 server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
