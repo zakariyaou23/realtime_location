@@ -24,6 +24,7 @@ io.on('connection', (socket) => {
   });
 });
 app.get('/', (req, res) => {
+    console.log("Initial route called");
     res.sendFile(join(__dirname, 'index.html'));
 });
 server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
