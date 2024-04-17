@@ -6,7 +6,7 @@ const { join } = require('node:path');
 const PORT = process.env.PORT || 4001;
 
 const app = express();
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 const server = http.createServer(app);
 const io = socketIo(server);
